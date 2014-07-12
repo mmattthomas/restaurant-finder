@@ -8,7 +8,11 @@
 	<h1>Finder!</h1>
 	<img src="http://maps.googleapis.com/maps/api/staticmap?center=New+York,NY&zoom=13&size=600x300"/>
 	<script>
-		alert('foobar')
+		// callback, so that system never waits
+		var positionFound = function (position) {
+			console.log(position)
+		}
+		navigator.geolocation.getCurrentPosition(positionFound)
 	</script>
 </body>
 </html>
