@@ -6,13 +6,17 @@
 </head>
 <body>
 	<h1>Finder!</h1>
-	<img src="http://maps.googleapis.com/maps/api/staticmap?center=New+York,NY&zoom=13&size=600x300"/>
+	<img id='mappy' src="http://maps.googleapis.com/maps/api/staticmap?center=New+York,NY&zoom=13&size=600x300"/>
 	<script>
 		// callback, so that system never waits
 		var positionFound = function (position) {
 			console.log(position)
+			mappy.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude + ","position.coords.longitude"
 		}
 		navigator.geolocation.getCurrentPosition(positionFound)
+
+		//here we broke out the callback function, but usually its "anonymous function"
+
 	</script>
 </body>
 </html>
