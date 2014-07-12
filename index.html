@@ -11,7 +11,9 @@
 		// callback, so that system never waits
 		var positionFound = function (position) {
 			console.log(position)
-			mappy.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude + ","position.coords.longitude"
+			var map = getElementById("mappy")
+			map.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude + "," + position.coords.longitude
+
 		}
 		navigator.geolocation.getCurrentPosition(positionFound)
 
